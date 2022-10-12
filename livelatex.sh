@@ -138,10 +138,10 @@ assign_positional_args()
 latex_compile() {
 	tex_path=$1
 
-	pdflatex -halt-on-error  ${tex_path}
+	xelatex -halt-on-error  ${tex_path}
 	bibtex "$(echo ${tex_path} | rev | cut -d'.' -f 2- | rev)"
-	pdflatex -halt-on-error ${tex_path}
-	pdflatex -halt-on-error ${tex_path}
+	xelatex -halt-on-error ${tex_path}
+	xelatex -halt-on-error ${tex_path}
 }
 
 
